@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ── Favicon ── -->
+    <link rel="icon" type="image/svg+xml" href="/stellar-logo.svg" />
+
+    <!-- ── SEO / Meta ── -->
+    <title>Stellar Storage DApp</title>
+    <meta
+      name="description"
+      content="A decentralised key-value store built on Stellar / Soroban smart contracts."
+    />
+
+    <!-- ── Open Graph ── -->
+    <meta property="og:title" content="Stellar Storage DApp" />
+    <meta
+      property="og:description"
+      content="Store and retrieve data on the Stellar blockchain."
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- ── Theme colour (matches the app's Stellar-blue palette) ── -->
+    <meta name="theme-color" content="#0e1428" />
+
+    <!--
+      Buffer polyfill — must load BEFORE the Stellar SDK bundle.
+      The SDK uses Buffer internally; browsers don't have it natively.
+    -->
+    <script>
+      window.global = window.globalThis;
+    </script>
+  </head>
+
+  <body>
+    <!-- React mounts here -->
+    <div id="root"></div>
+
+    <!-- Vite injects the compiled bundle at build time -->
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
