@@ -1,0 +1,45 @@
+[package]
+name    = "stellar-storage-contract"
+version = "0.1.0"
+edition = "2021"
+
+# Tell Cargo this is a WASM library (required for Soroban contracts)
+[lib]
+crate-type = ["cdylib"]
+
+# ─────────────────────────────────────────────
+#  Dependencies
+# ─────────────────────────────────────────────
+
+[dependencies]
+soroban-sdk = { version = "21.0.0", features = ["alloc"] }
+
+[dev-dependencies]
+soroban-sdk = { version = "21.0.0", features = ["testutils"] }
+
+# ─────────────────────────────────────────────
+#  Release profile — optimise WASM binary size
+# ─────────────────────────────────────────────
+
+[profile.release]
+opt-level     = "z"       # Optimise for binary size
+overflow-checks = true    # Keep overflow checks in release
+debug         = false
+strip         = "symbols"
+lto           = true
+codegen-units = 1
+panic         = "abort"
+
+# Contract-specific release profile used by stellar-cli
+[profile.release-with-logs]
+inherits    = "release"
+debug-assertions = true   # Enables log!() macro output
+
+# ─────────────────────────────────────────────
+#  Workspace metadata
+# ─────────────────────────────────────────────
+
+[package.metadata.stellar]
+# The contract will be deployed to Stellar Testnet
+# Run: stellar contract build
+# Then: stellar contract deploy --wasm target/wasm32-unknown-unknown/release/stellar_storage_contract.wasm
