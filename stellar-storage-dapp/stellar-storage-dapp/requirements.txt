@@ -1,0 +1,94 @@
+# =============================================================================
+# requirements.txt — Stellar Storage DApp
+# =============================================================================
+# This file documents every tool, runtime, and dependency required.
+# This is a reference document — NOT a pip install file.
+# =============================================================================
+
+
+# ─────────────────────────────────────────────
+# SYSTEM TOOLS
+# ─────────────────────────────────────────────
+
+# Rust toolchain — https://rustup.rs
+rust >= 1.78.0
+
+# WASM target — rustup target add wasm32-unknown-unknown
+wasm32-unknown-unknown
+
+# Stellar CLI — cargo install --locked stellar-cli --features opt
+stellar-cli >= 21.0.0
+
+# Node.js — https://nodejs.org or https://nvm.sh
+node >= 20.0.0
+
+# npm (bundled with Node.js)
+npm >= 10.0.0
+
+# curl (pre-installed on most systems)
+curl >= 7.0.0
+
+# git — https://git-scm.com
+git >= 2.40.0
+
+
+# ─────────────────────────────────────────────
+# OPTIONAL TOOLS
+# ─────────────────────────────────────────────
+
+# wasm-opt — brew install binaryen | apt install binaryen
+wasm-opt >= 114
+
+# jq — brew install jq | apt install jq
+jq >= 1.6
+
+
+# ─────────────────────────────────────────────
+# BROWSER EXTENSION
+# ─────────────────────────────────────────────
+
+# Freighter Wallet — https://www.freighter.app
+# Chrome, Firefox, Brave, Edge
+freighter-wallet >= 5.0.0
+
+
+# ─────────────────────────────────────────────
+# RUST DEPENDENCIES  (contracts/storage/Cargo.toml)
+# ─────────────────────────────────────────────
+
+soroban-sdk == 21.0.0
+
+
+# ─────────────────────────────────────────────
+# NODE DEPENDENCIES  (frontend/package.json)
+# ─────────────────────────────────────────────
+
+# Runtime
+@stellar/stellar-sdk == 12.3.0
+@stellar/freighter-api == 2.0.0
+react == 18.3.1
+react-dom == 18.3.1
+
+# Dev / Build
+vite == 5.4.1
+@vitejs/plugin-react == 4.3.1
+typescript == 5.5.3
+@types/react == 18.3.1
+@types/react-dom == 18.3.0
+eslint == 8.57.0
+@typescript-eslint/eslint-plugin == 7.0.0
+@typescript-eslint/parser == 7.0.0
+eslint-plugin-react-hooks == 4.6.2
+eslint-plugin-react-refresh == 0.4.7
+
+
+# ─────────────────────────────────────────────
+# STELLAR NETWORK ENDPOINTS
+# ─────────────────────────────────────────────
+
+# Testnet RPC:      https://soroban-testnet.stellar.org
+# Testnet Horizon:  https://horizon-testnet.stellar.org
+# Testnet Faucet:   https://friendbot.stellar.org
+# Testnet Explorer: https://stellar.expert/explorer/testnet
+# Mainnet RPC:      https://mainnet.sorobanrpc.com
+# Mainnet Horizon:  https://horizon.stellar.org

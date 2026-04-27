@@ -1,0 +1,56 @@
+# =============================================================================
+# .gitignore — Stellar Storage DApp
+# =============================================================================
+
+# ── Secrets — NEVER commit these ─────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+frontend/.env
+frontend/.env.local
+
+# ── Rust / Cargo ──────────────────────────────────────────────────────────────
+target/
+contracts/storage/target/
+**/*.wasm
+Cargo.lock
+
+# ── Node / Frontend ───────────────────────────────────────────────────────────
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+dist/
+.vite/
+
+# ── Logs ─────────────────────────────────────────────────────────────────────
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ── OS ───────────────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ── IDE / Editors ─────────────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.swp
+*.swo
+*.suo
+*.user
+.project
+.classpath
+.settings/
+
+# ── Misc ─────────────────────────────────────────────────────────────────────
+*.bak
+*.tmp
+*.optimized.wasm
+/tmp/
